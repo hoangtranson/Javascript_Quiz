@@ -1,4 +1,4 @@
-# Quiz 1 Values and Expression and Basic function
+# Quiz 1
 
 1. What is this print?
     ```javascript
