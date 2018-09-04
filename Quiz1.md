@@ -2,7 +2,7 @@
 
 1. What is this print?
     ```javascript
-    3 + true = ?
+    3 + true
     ```
 
 2. What is the result of this script ?
@@ -30,7 +30,7 @@
 
     ```javascript
     let x = NaN
-    x === NaN ???
+    x === NaN
     ```
 
 7. What is this print?
