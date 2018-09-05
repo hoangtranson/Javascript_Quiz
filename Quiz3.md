@@ -226,68 +226,159 @@
 
 24. What is this print?
     ```javascript
+    const unique = () => () => {}
+    unique() === unique()
     ```
 
 25. What is this print?
     ```javascript
+    const x = [2012, 6, 14];
+    ( y => x === y)(x)
     ```
 
 26. What is this print?
     ```javascript
+    const unique = () => () => {}
+    const y = x = unique()
+    x == y
     ```
 
 27. What is this print?
     ```javascript
+    const unique = () => () => {}
+    [unique()]
     ```
 
 28. What is this print?
     ```javascript
+    const unique = () => () => {}
+    const x = unique()
+    const y = unique()
+    const z = unique()
+    const a = [x, y, z]
+    a[0] === x && a[1] === y && a[2] === z
+]
     ```
 
 29. What is this print?
     ```javascript
+    { year: 2012, month: 6, day: 14 } === { year: 2012, month: 6, day: 14 }
     ```
 
 30. What is this print?
     ```javascript
+    const unique = () => () => {}
+    const x = unique()
+    const y = unique()
+    const z = unique()
+    const o = { a: x, b: y, c: z }
+    o['a'] === x && o['b'] === y && o['c'] === z
     ```
 
 31. What is this print?
     ```javascript
+    const Mathematic = {
+        abs: num =>  num < 0 ? -num : num
+    }
+    Mathematic.abs(-5)
     ```
 
 32. What is this print?
     ```javascript
+    (() => {
+        let age = 49;
+        (() => {
+            let age = 50;
+        })()
+        return age;
+    })()
     ```
 
 33. What is this print?
     ```javascript
+    (() => {
+        let age = 49;
+        (() => {
+            age = 50;
+        })()
+        return age;
+    })()
     ```
 
 34. What is this print?
     ```javascript
+    let allHallowsEve = [2012, 10, 31];
+    ( halloween => {
+        halloween = [2013, 10, 31];
+    })(allHallowsEve)
+
+    allHallowsEve
     ```
 
 35. What is this print?
     ```javascript
+    let allHallowsEve = [2012, 10, 31];
+    ( halloween => {
+        halloween[0] = 2013;
+    })(allHallowsEve)
+
+    allHallowsEve
     ```
 
 36. What is this print?
     ```javascript
+    var questionable = 'outer';
+    (() => {
+        alert(questionable);
+
+        if(true){
+            var questionable = 'inner';
+            alert(questionable)
+        }
+    })()
     ```
 
 37. What is this print?
     ```javascript
+    function once(fn){
+        let done = false;
+        return function(){
+            return done ? void 0 : ((done = true), fn.apply(this, arguments))
+        }
+    }
+    const askedOnBlindDate = once( () => 'sure, why not?');
+
+    askedOnBlindDate();
+    askedOnBlindDate();
+    askedOnBlindDate();
     ```
 
-38. What is this print?
+38. What is `fn`, `larg`, and `...rest` in this case?
+
     ```javascript
+    const callFirst = (fn, larg) =>
+        function (...rest) {
+            return fn.call(this, larg, ...rest);
+        }
+    
+    const greet = (me, you) => `Hello, ${you}, my name is ${me}`;
+    const heliosSaysHello = callFirst(greet, 'Helios');
+
+    heliosSaysHello('Eartha');
     ```
 
 39. What is this print?
     ```javascript
+    const wrap = (something) => [something];
+    wrap("lunch");
     ```
 
 40. What is this print?
     ```javascript
+    const description = (nameAndOccupation) => {
+        const [[first, last], occupation] = nameAndOccupation;
+        return `${first} is a ${occupation}`;
+    }
+
+    description([["Reginald", "Braithwaite"], "programmer"])
     ```
